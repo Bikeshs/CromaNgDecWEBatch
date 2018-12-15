@@ -5,10 +5,11 @@ import { AComponent } from "./a.component";
 import { BComponent } from "./b.component";
 import { CComponent } from "./c.component";
 import { LoginComponent } from "./login.component";
-import { routes } from './route.config'
+import { routes } from './route.config';
+import { FormsModule } from "@angular/forms";
 @NgModule({
     declarations: [LoginComponent, StartComponent, AComponent, BComponent, CComponent],
-    imports: [BrowserModule, RouterModule.forRoot(routes)],
+    imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
     providers: [],
     bootstrap: [StartComponent]
 })

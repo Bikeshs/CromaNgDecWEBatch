@@ -5,12 +5,13 @@ import { Router } from "@angular/router";
     templateUrl: './login.component.html'
 })
 export class LoginComponent {
+    Id;
     constructor(private route: Router) {
 
     }
     title: 'Hello login Component';
     go() {
         this.route.navigate(['./a',1,'bikesh']);
-        //this.route.navigate(['./a'],{queryParams:{id:1,name:'Bikesh'}});
+        //this.route.navigate(['./b'], { queryParams: { id: this.Id, name: 'Bikesh' } });
     }
 }

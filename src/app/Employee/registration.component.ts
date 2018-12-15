@@ -15,6 +15,7 @@ export class EmployeeComponent {
             { id: 2, value: 'Delhi' },
             { id: 3, value: 'Lucknow' }
         )
+        //var data = this.cityList.map(x => x.id == 2);
     }
     saveData(obj) {
         if (obj.form.status == "VALID") {

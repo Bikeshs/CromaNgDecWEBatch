@@ -10,5 +10,5 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(ChangeDetectionModule)
+platformBrowserDynamic().bootstrapModule(RouterAppModule)
   .catch(err => console.error(err));
