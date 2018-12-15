@@ -1,0 +1,42 @@
+<fieldset>
+    <legend>
+        <h1>{{title}}</h1>
+    </legend>
+    <form #f="ngForm" name="f" (ngSubmit)="saveData(f)">
+        <span><b>First Name</b></span> &nbsp;
+        <input [disabled]="employeeObj.Active" [required]="employeeObj.Active" minlength="5" pattern="((\s*[a-zA-Z0-9]+\s?[\s\-\s\'\.]?[a-zA-Z0-9]?\s*[\s\-\s\'\.]?[a-zA-Z0-9]?\s*[\s\-\s\'\.]?[a-zA-Z0-9]?\s*[\s\-\s\'\.]?[a-zA-Z0-9]+\s*)|[[a-zA-Z0-9] \s+]*)((,\s*[a-zA-Z0-9]+\s?[\s\-\s\'\.]?\s*[a-zA-Z0-9]+\s*[\s\-\s\'\.]?\s*[a-zA-Z0-9]?\s*[\s\-\s\'\.]?\s*[a-zA-Z0-9]?\s*[\s\-\s\'\.]?\s*[a-zA-Z0-9]?\s*)|(,[[a-zA-Z0-9] \s+]+))"
+            name="tt1" #tt1="ngModel" type="text" [(ngModel)]="employeeObj.FirstName">
+        <div id="error" *ngIf="tt1.errors">
+            <span *ngIf="tt1.errors.required">*</span>
+            <span *ngIf="tt1.errors.minlength">Minimum 5 char</span>
+            <span *ngIf="tt1.errors.pattern">Not valid format</span>
+        </div>
+        <br><br>
+        <span><b>City Name</b></span> &nbsp;&nbsp;&nbsp;
+        <select #tt2="ngModel" name="tt2" [(ngModel)]="employeeObj.CityId" (change)="getSelectedData($event)">
+            <option value="0">Select City Name</option>
+            <option value="{{item.id}}" *ngFor="let item of cityList">{{item.value}}</option>
+
+        </select>
+        <br><br>
+        <span><b>Gender</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="tt3" type="radio" [(ngModel)]="employeeObj.Gender1">
+        <input name="tt4" type="radio" [(ngModel)]="employeeObj.Gender2">
+        <br><br>
+        <span><b>Active</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="tt5" type="checkbox" [(ngModel)]="employeeObj.Active">
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit">Save</button>&nbsp;&nbsp;
+        <button type="button" (click)="clearRecord()">Cancel</button>
+    </form>
+</fieldset>
+
+<p id="If" *ngIf="employeeObj.Active;else otherCond">Active with If</p>
+<ng-template #otherCond>
+    <p id="If">Active with Else cond.</p>
+</ng-template>
+
+
+
+<p id="hdd" [hidden]="employeeObj.Active">Active with Hidden</p>
