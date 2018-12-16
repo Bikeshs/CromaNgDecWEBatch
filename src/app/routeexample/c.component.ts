@@ -1,5 +1,4 @@
 import { Component,Pipe } from "@angular/core";
-import { Transform } from "stream";
 @Component({
     selector: 'ccomp',
     templateUrl: './c.component.html'
