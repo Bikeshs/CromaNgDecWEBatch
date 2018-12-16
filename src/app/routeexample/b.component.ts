@@ -13,6 +13,6 @@ export class BComponent {
             this.name = obj.name;
         }
         )
-        title: 'Hello B Component';
+        this.name = localStorage.getItem('name').toString();
     }
 }

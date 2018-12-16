@@ -7,11 +7,13 @@ import { Router } from "@angular/router";
 export class LoginComponent {
     Id;
     constructor(private route: Router) {
-
+        localStorage.setItem('name','bbbbb');
+        localStorage.setItem('name1','bbbbb1');
     }
     title: 'Hello login Component';
     go() {
-        this.route.navigate(['./a',1,'bikesh']);
+        //this.route.navigate(['./a',15,'bikeshsrrrr']);
         //this.route.navigate(['./b'], { queryParams: { id: this.Id, name: 'Bikesh' } });
+        this.route.navigate(['./c']);
     }
 }
