@@ -1,4 +1,4 @@
-import { Component,Pipe } from "@angular/core";
+import { Component, Pipe } from "@angular/core";
 @Component({
     selector: 'ccomp',
     templateUrl: './c.component.html'
@@ -9,7 +9,7 @@ export class CComponent {
     amt;
     constructor() {
         this.title = "Bikesh Srivastava";
-        this.DOB = new Date('08/20/2018');
-        this.amt = "1542";        
+        this.DOB = "08/20/1988";
+        this.amt = "1542";
     }
 }

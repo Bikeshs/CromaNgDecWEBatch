@@ -3,13 +3,15 @@ import { StartComponent } from "./start.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { ParentComponent } from "./parent.component";
 import { ChildComponent } from "./child.component";
-import { isComponent } from "@angular/core/src/render3/util";
 import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
+import { routes } from "./route.config";
+import { CommonModule } from "@angular/common";
 @NgModule({
     declarations: [StartComponent, ParentComponent, ChildComponent],
-    imports: [BrowserModule, FormsModule],
+    imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
     providers: [],
-    bootstrap: [StartComponent]
+    bootstrap: []
 })
 export class ChangeDetectionModule {
 

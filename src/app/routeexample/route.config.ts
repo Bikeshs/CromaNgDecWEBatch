@@ -10,5 +10,6 @@ export const routes: Routes = [
     { path: 'c', component: CComponent },
     { path: 'start', component: StartComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'otherM', loadChildren:'../changedetection/changedetection.module#ChangeDetectionModule' },
     { path: '**', component: LoginComponent },
 ];
