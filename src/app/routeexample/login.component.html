@@ -1,7 +1,7 @@
 <h1>Hello Login Component</h1>
 <input type="text" [(ngModel)]="Id">
-<button type="button" (click)="go()">open other comp</button> <br>
-<button type="button" (click)="goToOtherModule()">open Other module Comp</button> <br>
+<button [ngClass]="['test']" type="button" (click)="go()">open other comp</button> <br>
+<button [ngStyle]="{'background-color': 'green'}" type="button" (click)="goToOtherModule()">open Other module Comp</button> <br>
 <a [routerLink]="['./a']" [queryParams]="{id:1}">open other comp</a>
 <br>
-<ng-datepicker [options]="parameters" [isOpened]="true" [position]="top-right" [(ngModel)]="date"></ng-datepicker>
+<ng-datepicker [options]="parameters" [isOpened]="false" [(ngModel)]="date"></ng-datepicker>
