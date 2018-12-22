@@ -8,9 +8,10 @@ import { LoginComponent } from "./login.component";
 import { routes } from './route.config';
 import { FormsModule } from "@angular/forms";
 import { AgeCountPipe } from "../pipe/agecount.pipe";
+import { NgDatepickerModule } from 'ng2-datepicker';
 @NgModule({
     declarations: [AgeCountPipe, LoginComponent, StartComponent, AComponent, BComponent, CComponent],
-    imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+    imports: [NgDatepickerModule,BrowserModule, FormsModule, RouterModule.forRoot(routes)],
     providers: [],
     bootstrap: [StartComponent]
 })

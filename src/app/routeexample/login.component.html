@@ -2,4 +2,6 @@
 <input type="text" [(ngModel)]="Id">
 <button type="button" (click)="go()">open other comp</button> <br>
 <button type="button" (click)="goToOtherModule()">open Other module Comp</button> <br>
-<a [routerLink]="['./a']" [queryParams]="{id:1}" >open other comp</a>
+<a [routerLink]="['./a']" [queryParams]="{id:1}">open other comp</a>
+<br>
+<ng-datepicker [options]="parameters" [isOpened]="true" [position]="top-right" [(ngModel)]="date"></ng-datepicker>
