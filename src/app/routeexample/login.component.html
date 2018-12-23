@@ -1,7 +1,24 @@
 <h1>Hello Login Component</h1>
 <input type="text" [(ngModel)]="Id">
 <button [ngClass]="['test']" type="button" (click)="go()">open other comp</button> <br>
-<button [ngStyle]="{'background-color': 'green'}" type="button" (click)="goToOtherModule()">open Other module Comp</button> <br>
+<button [ngStyle]="{'background-color': 'green'}" type="button" (click)="goToOtherModule()">open Other module Comp</button>
+<br>
 <a [routerLink]="['./a']" [queryParams]="{id:1}">open other comp</a>
 <br>
 <ng-datepicker [options]="parameters" [isOpened]="false" [(ngModel)]="date"></ng-datepicker>
+<br>
+<br>
+<button type="button" (click)="showData()">Show Data</button>
+<button type="button" (click)="saveData()">Save Data</button>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>User Name</th>
+        <th>Password</th>
+    </thead>
+    <tr *ngFor="let itm of userList">
+        <td>{{itm.ID}}</td>
+        <td>{{itm.UserName}}</td>
+        <td>{{itm.Password}}</td>
+    </tr>
+</table>

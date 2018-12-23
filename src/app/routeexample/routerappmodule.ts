@@ -9,10 +9,12 @@ import { routes } from './route.config';
 import { FormsModule } from "@angular/forms";
 import { AgeCountPipe } from "../pipe/agecount.pipe";
 import { NgDatepickerModule } from 'ng2-datepicker';
+import { EmployeService } from "../service/employee.service";
+import { HttpModule } from "@angular/http";
 @NgModule({
     declarations: [AgeCountPipe, LoginComponent, StartComponent, AComponent, BComponent, CComponent],
-    imports: [NgDatepickerModule,BrowserModule, FormsModule, RouterModule.forRoot(routes)],
-    providers: [],
+    imports: [HttpModule, NgDatepickerModule, BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+    providers: [EmployeService],
     bootstrap: [StartComponent]
 })
 export class RouterAppModule {
