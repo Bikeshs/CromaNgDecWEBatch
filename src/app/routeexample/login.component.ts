@@ -4,6 +4,7 @@ import { DatepickerOptions } from 'ng2-datepicker';
 import * as frLocale from 'date-fns/locale/fr';
 import { EmployeService } from "../service/employee.service";
 import { Employee, User } from "../Employee/employee.model";
+import { Http } from "@angular/http";
 import { error } from "@angular/compiler/src/util";
 @Component({
     selector: 'login',
@@ -14,7 +15,8 @@ export class LoginComponent {
     date: any;
     userList = [];
     objUser: User = new User();
-    constructor(private route: Router, private empSrvice: EmployeService) {
+    URL = 'https://fakerestapi.azurewebsites.net/api/Users';
+    constructor(private http:Http,private route: Router, private empSrvice: EmployeService) {
         localStorage.setItem('name', 'bbbbb');
         localStorage.setItem('name1', 'bbbbb1');
     }
@@ -47,13 +49,16 @@ export class LoginComponent {
     };
     showData() {
         //to get data via Observable
-        this.empSrvice.getEmployeeDataWithObservable().subscribe(xyz => {
-            this.userList = xyz.json();
-        });
+        // this.empSrvice.getEmployeeDataWithObservable().subscribe(xyz => {
+        //     this.userList = xyz.json();
+        // });
 
         //to get data via promise  
-        this.empSrvice.getEmployeeData().then(xyz => {
-            this.userList = xyz.json();
+        // this.empSrvice.getEmployeeData().then(xyz => {
+        //     this.userList = xyz.json();
+        // });
+        return this.http.get(this.URL).subscribe(x=>{
+            this.userList=x.json();
         });
     }
     saveData() {
